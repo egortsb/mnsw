@@ -94,7 +94,7 @@ Cell.prototype.open = function () {
         if (this.danger > 0) {
             var style = {
                 font: 'bold ' + MNSW.cellSize / 2 + 'px Arial',
-                fill: '#EEEEEE',
+                fill: ['blue', 'lime', 'orange', 'red', 'purple', 'yellow', 'gray', 'black'][this.danger - 1]
             };
             var basicText = new PIXI.Text(this.danger, style);
             basicText.x = this.position.x * MNSW.cellSize + MNSW.position.x;
@@ -120,4 +120,3 @@ Cell.prototype.explode = function () {
     });
     MNSW.gameOver();
 }
-
